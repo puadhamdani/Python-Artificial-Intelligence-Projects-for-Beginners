@@ -201,3 +201,24 @@ class TestApp(unittest.TestCase):
         print("output test: ")
         print(output)
         self.assertLessEqual(output[0], 1)
+
+    def test_02_jefrinanda_1184052(self):
+        from Chapter01.jefri_1184052 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_win = train.pop(0)
+        #test data
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_win = test.pop(0)
+        #training
+        t = training(dfs_train_att, dfs_train_win)
+        #predict
+        result = testing(t,dfs_test_att)
+        print("result : ")
+        print(result)
+        self.assertLessEqual(result[0], 1)
+ 
