@@ -7,8 +7,8 @@ def prepoc(datapath):
 
     # shuffle data
     pusing = pusing.sample(frac=1)
-    pusing_train = pusing[:2000] #data training yang digunakan 1 sampai 2000 data
-    pusing_test = pusing[2000:] #data testing yang digunakan mulai dari data ke 2000 sampai data terakhir
+    pusing_train = pusing[:5520] #data training yang digunakan 1 sampai 2000 data
+    pusing_test = pusing[5520:] #data testing yang digunakan mulai dari data ke 2000 sampai data terakhir
 
     pusing_train_att = pusing_train.drop(['class'], axis=1) #menggunakan label UsingIP karena merupakan salah satu atribut data pada datasets phishing
     pusing_train_pass = pusing_train['class']
