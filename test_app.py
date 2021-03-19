@@ -83,3 +83,15 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[-1]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
+
+    def test_02_dimas_1184081(self):
+        from Chapter01.dimas1184081 import prepoc,training,testing
+        dataset='Chapter01/dataset/Pokedex_Condensed_Numeric_Dataset.csv'
+        anak_train_att,anak_train_pass,anak_test_att,anak_test_pass,anak_att,anak_pass= prepoc(dataset)
+        it = training(anak_train_att,anak_train_pass)
+        hasiltestingsemua = 	testing(it,anak_test_att)
+        print('\n hasil testing : ')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 8)
+

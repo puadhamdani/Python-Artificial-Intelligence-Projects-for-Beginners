@@ -10,14 +10,14 @@ def prepoc(datapath):
     pusing_train = pusing[:2000] #data training yang digunakan 1 sampai 2000 data
     pusing_test = pusing[2000:] #data testing yang digunakan mulai dari data ke 2000 sampai data terakhir
 
-    pusing_train_att = pusing_train.drop(['UsingIP'], axis=1) #menggunakan label UsingIP karena merupakan salah satu atribut data pada datasets phishing
-    pusing_train_pass = pusing_train['UsingIP']
+    pusing_train_att = pusing_train.drop(['class'], axis=1) #menggunakan label UsingIP karena merupakan salah satu atribut data pada datasets phishing
+    pusing_train_pass = pusing_train['class']
 
-    pusing_test_att = pusing_test.drop(['UsingIP'], axis=1)
-    pusing_test_pass = pusing_test['UsingIP']
+    pusing_test_att = pusing_test.drop(['class'], axis=1)
+    pusing_test_pass = pusing_test['class']
 
-    pusing_att = pusing.drop(['UsingIP'], axis=1) 
-    pusing_pass = pusing['UsingIP']
+    pusing_att = pusing.drop(['class'], axis=1) 
+    pusing_pass = pusing['class']
     return pusing_train_att,pusing_train_pass,pusing_test_att,pusing_test_pass,pusing_att,pusing_pass
 
 def training(pusing_train_att,pusing_train_pass): #struktur data training
