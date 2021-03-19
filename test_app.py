@@ -60,4 +60,4 @@ class TestApp(unittest.TestCase):
         result = testing(t,dfs_test_att)
         print("result : ")
         print(result)
-        self.assertLessEqual(result[0], 1)
+        self.assertLessEqual(result[0], 2)
