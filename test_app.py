@@ -71,4 +71,4 @@ class TestApp(unittest.TestCase):
         print('\n Hasil testing : ') 
         print(hasiltestingsemua) 
         ambilsatuhasiltesting = hasiltestingsemua[1] 
-        self.assertLessEqual(ambilsatuhasiltesting, 2) 
+        self.assertLessEqual(ambilsatuhasiltesting, 1) 
