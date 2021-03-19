@@ -63,12 +63,12 @@ class TestApp(unittest.TestCase):
         self.assertLessEqual(result[0], 2)
 
     def test_02_rizal_1184033(self):
-        from Chapter01.rizalramadhan1184033 import prepoc, training, testing #mengimport fuction pada class rizalramadhan1184033
-        datapath = 'Chapter01/dataset/train.csv' #menampung file csv
+        from Chapter01.rizalramadhan1184033 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/train.csv'
         nanas_train_att, nanas_train_pass, nanas_test_att, nanas_test_pass, nanas_att, nanas_pass = prepoc(datapath)
-        apel = training(nanas_train_att, nanas_train_pass) #memanggil attribut dari class yang di import
-        hasiltestingsemua = testing(apel, nanas_test_att) #menampilkan semua hasil testing
-        print('\n Hasil testing : ') #menampilkan hasil di codingan
-        print(hasiltestingsemua) #menampilkan hasil di codingan
-        ambilsatuhasiltesting = hasiltestingsemua[1] #menampilkan hasil 
-        self.assertLessEqual(ambilsatuhasiltesting, 2) #memanggil hasil
+        apel = training(nanas_train_att, nanas_train_pass) 
+        hasiltestingsemua = testing(apel, nanas_test_att) 
+        print('\n Hasil testing : ') 
+        print(hasiltestingsemua) 
+        ambilsatuhasiltesting = hasiltestingsemua[1] 
+        self.assertLessEqual(ambilsatuhasiltesting, 2) 
