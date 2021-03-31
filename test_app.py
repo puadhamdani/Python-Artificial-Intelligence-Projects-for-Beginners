@@ -84,16 +84,70 @@ class TestApp(unittest.TestCase):
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 8)
         
-    def test_02_kevin_1184049(self):
-        from Chapter01.kevin1184049 import prepoc,training, testing  
-        dataset='Chapter01/dataset/phishing.csv' 
-        pusing_train_att,pusing_train_pass,pusing_test_att,pusing_test_pass,pusing_att,pusing_pass= prepoc(dataset)
-        kepala = training(pusing_train_att,pusing_train_pass)
-        hasiltestingsemua = 	testing(kepala,pusing_test_att)
-        print('\n hasil testing : ')
+    def test_02_nurul_1184038(self):
+        from Chapter01.nurul1184038 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/student-mat-pass-or-fail.csv'
+        d_train_att, d_train_pass, d_test_att, d_test_pass, d_att, d_pass = prepoc(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
         print(hasiltestingsemua)
-        ambilsatuhasiltesting = hasiltestingsemua[-1]
+        ambilsatuhasiltesting = hasiltestingsemua[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
         
+    def test_03_aditya_1184090(self):
+        from Chapter02.Aditya1184090 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        d_train_attribute = train.pop(0)
+        d_train_var = train.pop(0)
+        #test data
+        test = data.pop(0)
+        d_test_attribute = test.pop(0)
+        d_test_var = test.pop(0)
+        #training
+        t = training(d_train_attribute, d_train_var)
+        #predict
+        result = testing(t,d_test_attribute)
+        print("result : ")
+        print(result)
+        print('Score:', t.score(d_test_attribute, d_test_var))
+        self.assertLessEqual(result[0], 2)
         
-
+    def test_03_yusuf_1184026(self):
+        from Chapter02.Yusuf1184026 import preparation, training, testing
+        dataset = 'Chapter01/dataset/car.txt'
+        # testing function preparation
+        df_train_att, df_train_label, df_test_att, df_test_label, df_att, df_label = preparation(dataset)
+        # testing function training
+        clf = training(df_train_att, df_train_label)
+        # testing function testing
+        hasil = testing(clf, df_test_att.head())
+        # hasil testing
+        print('\nhasil testing Yusuf :', hasil)
+        print('Score:', clf.score(df_test_att, df_test_label))
+    
+    def test_03_rizalramadhan_1184033(self):
+        from Chapter02.rizalramadhan1184033 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/mobile.txt'
+        nanas_train_att, nanas_train_pass, nanas_test_att, nanas_test_pass, nanas_att, nanas_pass = prepoc(datapath)
+        apel = training(nanas_train_att, nanas_train_pass)
+        hasiltestingsemua = testing(apel, nanas_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', apel.score(nanas_test_att, nanas_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 2)
+        
+    def test_03_kevin_1184049(self):
+        from Chapter02.kevin1184049 import preparation, training, testing
+        datapath = 'Chapter01/dataset/phishing.txt'
+        d_train_att, d_train_pass, d_test_att, d_test_pass, d_att, d_pass = preparation(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 2)
