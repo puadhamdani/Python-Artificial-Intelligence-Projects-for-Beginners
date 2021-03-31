@@ -140,4 +140,15 @@ class TestApp(unittest.TestCase):
         print('\nhasil testing Yusuf :', hasil)
         print('Score:', clf.score(df_test_att, df_test_label))
     
+    def test_03_rizalramadhan_1184033(self):
+        from Chapter02.rizalramadhan1184033 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/mobile.txt'
+        nanas_train_att, nanas_train_pass, nanas_test_att, nanas_test_pass, nanas_att, nanas_pass = prepoc(datapath)
+        apel = training(nanas_train_att, nanas_train_pass)
+        hasiltestingsemua = testing(apel, nanas_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', apel.score(nanas_test_att, nanas_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 2)
 
