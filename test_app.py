@@ -126,3 +126,18 @@ class TestApp(unittest.TestCase):
         print(result)
         print('Score:', t.score(d_test_attribute, d_test_var))
         self.assertLessEqual(result[0], 2)
+        
+    def test_03_yusuf_1184026(self):
+        from Chapter02.Yusuf1184026 import preparation, training, testing
+        dataset = 'Chapter01/dataset/car.txt'
+        # testing function preparation
+        df_train_att, df_train_label, df_test_att, df_test_label, df_att, df_label = preparation(dataset)
+        # testing function training
+        clf = training(df_train_att, df_train_label)
+        # testing function testing
+        hasil = testing(clf, df_test_att.head())
+        # hasil testing
+        print('\nhasil testing Yusuf :', hasil)
+        print('Score:', clf.score(df_test_att, df_test_label))
+    
+
