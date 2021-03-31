@@ -42,7 +42,6 @@ class TestApp(unittest.TestCase):
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 2)
 
-        
     def test_02_aditya_1184090(self):
         from Chapter01.Aditya1184090 import preparation,training,testing
         #data
@@ -84,7 +83,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 8)
-        
+
     def test_02_yuki_1184053(self):
         from Chapter01.yuki1184053 import prepoc,training,testing
         dataset='Chapter01/dataset/bankruptcy_prediction.csv'
@@ -96,3 +95,13 @@ class TestApp(unittest.TestCase):
         ambilsatuhasiltesting = hasiltestingsemua[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
 
+    def test_02_nurul_1184038(self):
+        from Chapter01.nurul1184038 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/student-mat-pass-or-fail.csv'
+        d_train_att, d_train_pass, d_test_att, d_test_pass, d_att, d_pass = prepoc(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[0]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
