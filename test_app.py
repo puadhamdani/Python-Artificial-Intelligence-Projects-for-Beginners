@@ -41,7 +41,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 2)
-        
+
     def test_02_aditya_1184090(self):
         from Chapter01.Aditya1184090 import preparation,training,testing
         #data
@@ -72,7 +72,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua) 
         ambilsatuhasiltesting = hasiltestingsemua[1] 
         self.assertLessEqual(ambilsatuhasiltesting, 1)
-
+        
     def test_02_dimas_1184081(self):
         from Chapter01.dimas1184081 import prepoc,training,testing
         dataset='Chapter01/dataset/Pokedex_Condensed_Numeric_Dataset.csv'
@@ -83,7 +83,18 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 8)
-        
+
+    def test_02_yuki_1184053(self):
+        from Chapter01.yuki1184053 import prepoc,training,testing
+        dataset='Chapter01/dataset/bankruptcy_prediction.csv'
+        pencak_train_att,pencak_train_pass,pencak_test_att,pencak_test_pass,pencak_att,pencak_pass= prepoc(dataset)
+        silat = training(pencak_train_att,pencak_train_pass)
+        hasiltestingsemua =     testing(silat,pencak_test_att)
+        print('\n hasil testing : ')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[0]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
+
     def test_02_nurul_1184038(self):
         from Chapter01.nurul1184038 import prepoc, training, testing
         datapath = 'Chapter01/dataset/student-mat-pass-or-fail.csv'
