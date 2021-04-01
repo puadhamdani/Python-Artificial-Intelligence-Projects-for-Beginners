@@ -232,4 +232,4 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         print('Score:', t.score(d_test_attribute, d_test_var))
-        self.assertLessEqual(result[0], 2)
+        self.assertLessEqual(result[0], 1)
