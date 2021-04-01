@@ -175,3 +175,24 @@ class TestApp(unittest.TestCase):
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 2)
         print('Score:', t.score(d_test_att, d_test_pass))
+        
+    def test_03_YukiArdiansyah_1184053(self):
+        from Chapter02.YukiArdiansyah_1184053 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        yuki_train_attribute = train.pop(0)
+        yuki_train_var = train.pop(0)
+        #test data
+        test = data.pop(0)
+        yuki_test_attribute = test.pop(0)
+        yuki_test_var = test.pop(0)
+        #training
+        ardi = training(yuki_train_attribute, yuki_train_var)
+        #predict
+        result = testing(ardi,yuki_test_attribute)
+        print("Hasil : ")
+        print(result)
+        print('Score:', ardi.score(yuki_test_attribute, yuki_test_var))
+        self.assertLessEqual(result[0], 2)
