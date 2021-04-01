@@ -151,4 +151,15 @@ class TestApp(unittest.TestCase):
         print('Score:', apel.score(nanas_test_att, nanas_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 2)
-
+        
+    def test_03_kevin_1184049(self):
+        from Chapter02.kevin1184049 import preparation, training, testing
+        datapath = 'Chapter01/dataset/phishing.txt'
+        d_train_att, d_train_pass, d_test_att, d_test_pass, d_att, d_pass = preparation(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', t.score(d_test_att, d_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 2)
