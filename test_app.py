@@ -177,7 +177,7 @@ class TestApp(unittest.TestCase):
         print('Score:', t.score(d_test_att, d_test_pass))
         
     def test_03_YukiArdiansyah_1184053(self):
-        from Chapter02.YukiArdiansyah_1184053 import preparation,training,testing
+        from Chapter02.YukiArdiansyah1184053 import preparation,training,testing
         #data
         data = preparation()
         #train data
