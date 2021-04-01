@@ -163,3 +163,15 @@ class TestApp(unittest.TestCase):
         print('Score:', t.score(d_test_att, d_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 2)
+        
+    def test_03_dian_1184095(self):
+        from Chapter02.dian1184095 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/new_test.txt'
+        d_train_att, d_train_pass, d_test_att, d_test_pass, d_att, d_pass = prepoc(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 2)
+        print('Score:', t.score(d_test_att, d_test_pass))
