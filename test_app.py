@@ -160,5 +160,6 @@ class TestApp(unittest.TestCase):
         hasiltestingsemua = testing(t, d_test_att)
         print('\n Hasil testing : ')
         print(hasiltestingsemua)
+        print('Score:', t.score(d_test_att, d_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 2)
