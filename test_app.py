@@ -212,3 +212,24 @@ class TestApp(unittest.TestCase):
         print(result)
         print('Score:', t.score(d_test_attribute, d_test_var))
         self.assertLessEqual(result[1], 7)
+        
+    def test_03_helmiazhar_1184013(self):
+        from Chapter02.helmiazhar1184013 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        d_train_attribute = train.pop(0)
+        d_train_var = train.pop(0)
+        #test data
+        test = data.pop(0)
+        d_test_attribute = test.pop(0)
+        d_test_var = test.pop(0)
+        #training
+        t = training(d_train_attribute, d_train_var)
+        #predict
+        result = testing(t,d_test_attribute.head())
+        print("result : ")
+        print(result)
+        print('Score:', t.score(d_test_attribute, d_test_var))
+        self.assertLessEqual(result[0], 2)
