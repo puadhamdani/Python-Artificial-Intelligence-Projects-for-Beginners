@@ -196,3 +196,19 @@ class TestApp(unittest.TestCase):
         print(result)
         print('Score:', ardi.score(yuki_test_attribute, yuki_test_var))
         self.assertLessEqual(result[0], 2)
+        
+    def test_03_almi_1184043(self):
+        from Chapter02.almi1184043 import preparation,training,testing
+        data = preparation()
+        train = data.pop(0)
+        d_train_attribute = train.pop(0)
+        d_train_var = train.pop(0)
+        test = data.pop(0)
+        d_test_attribute = test.pop(0)
+        d_test_var = test.pop(0)
+        t = training(d_train_attribute, d_train_var)
+        result = testing(t,d_test_attribute.head())
+        print("result : ")
+        print(result)
+        print('Score:', t.score(d_test_attribute, d_test_var))
+        self.assertLessEqual(result[1], 7)
