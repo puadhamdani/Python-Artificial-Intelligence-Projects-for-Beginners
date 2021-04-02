@@ -285,4 +285,6 @@ class TestApp(unittest.TestCase):
         # hasil
         print('\nhasil testing dinda : ')
         print(hasiltesting)
+        ambilsatuhasiltesting = hasiltesting[0]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
         print('Score:', clf.score(df_test_att, df_test_label))
