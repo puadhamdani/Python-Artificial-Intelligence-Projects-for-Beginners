@@ -5,7 +5,7 @@ def preparation():
     data = pd.read_csv('Chapter01/dataset/cancer.txt', sep=',', usecols=[0,1,2,3,4,5,6,7], header=None, names=['age', 'gender', 'persistentcough', 'Bleeding', 'alump', 'digestivedisorders','increasedheartrate', 'Diagnosis'])
    
     data = data.sample(frac=1)
-    data = [data.iloc[:,:6], data.iloc[:, 6:]]
+    data = [data.iloc[:,:7], data.iloc[:, 7:]]
 
 
     df_dt_atribut = data.pop(0)
