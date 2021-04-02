@@ -150,7 +150,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         print('Score:', apel.score(nanas_test_att, nanas_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
-        self.assertLessEqual(ambilsatuhasiltesting, 2)
+        self.assertLessEqual(ambilsatuhasiltesting, 3)
         
     def test_03_kevin_1184049(self):
         from Chapter02.kevin1184049 import preparation, training, testing
