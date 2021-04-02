@@ -359,4 +359,6 @@ class TestApp(unittest.TestCase):
         # hasil testing yang dilakukan
         print(' testing : ')
         print(hasiltesting)
+        ambilsatuhasiltesting = hasiltesting[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 6)
         print('Hasil ', clf.score(f_test_att, f_test_label))
