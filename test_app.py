@@ -347,4 +347,16 @@ class TestApp(unittest.TestCase):
         self.assertLessEqual(ambilsatuhasiltesting, 6)
         print('Score:', t.score(d_test_att, d_test_pass))
         
-        
+    def test_03_Alvian_1184077(self):
+        from Chapter02.Alvian1184077 import preparation, training, testing
+        datasetpath = 'Chapter01/dataset/house-votes-84.txt'
+        f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label = preparation(datasetpath)
+        # testing dari fungsi traning
+        clf = training(f_train_att, f_train_label)
+        # testing dari fungsi testing
+        hasiltesting = testing(clf, f_test_att.head())
+
+        # hasil testing yang dilakukan
+        print(' testing : ')
+        print(hasiltesting)
+        print('Hasil ', clf.score(f_test_att, f_test_label))
