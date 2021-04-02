@@ -321,3 +321,17 @@ class TestApp(unittest.TestCase):
         print('Score:', clf.score(df_test_att, df_test_label))
         self.assertLessEqual(hasiltesting[1], 4) 
         
+    def test_03_gany_1184008(self):
+        from Chapter02.Gany1184008 import preparation, training, testing
+        datasetpath = 'Chapter01/dataset/AirQualiityUCI.txt'
+        # testing function preparation
+        tes_train_att,tes_train_pass,tes_test_att,tes_test_pass,tes_att,tes_pass= preparation(datasetpath)
+        # testing function training
+        x = training(tes_train_att, tes_train_pass)
+        # testing function testing
+        hasil = testing(x, tes_test_att.head())
+        # hasil testing
+        print('\nhasil testing gany :', hasil)
+        print('Score:', x.score(tes_test_att, tes_test_pass)) 
+        self.assertLessEqual(hasil[1], 2)
+        
