@@ -150,7 +150,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         print('Score:', apel.score(nanas_test_att, nanas_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
-        self.assertLessEqual(ambilsatuhasiltesting, 3)
+        self.assertLessEqual(ambilsatuhasiltesting, 2)
         
     def test_03_kevin_1184049(self):
         from Chapter02.kevin1184049 import preparation, training, testing
@@ -350,6 +350,23 @@ class TestApp(unittest.TestCase):
     def test_03_Alvian_1184077(self):
         from Chapter02.Alvian1184077 import preparation, training, testing
         datasetpath = 'Chapter01/dataset/house-votes-84.txt'
+        f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label = preparation(datasetpath)
+        # testing dari fungsi traning
+        clf = training(f_train_att, f_train_label)
+        # testing dari fungsi testing
+        hasiltesting = testing(clf, f_test_att.head())
+
+        # hasil testing yang dilakukan
+        print(' testing : ')
+        print(hasiltesting)
+        ambilsatuhasiltesting = hasiltesting[0]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
+        print('Hasil ', clf.score(f_test_att, f_test_label))
+
+    def test_03_Mauliddhia_1184101(self):
+        from Chapter02.Mauliddhia1184101 import preparation, training, testing
+
+        datasetpath = 'Chapter01/dataset/kr-vs-kp.txt'
         f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label = preparation(datasetpath)
         # testing dari fungsi traning
         clf = training(f_train_att, f_train_label)
