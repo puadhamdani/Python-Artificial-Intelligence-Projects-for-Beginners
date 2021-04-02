@@ -254,3 +254,21 @@ class TestApp(unittest.TestCase):
         print(result)
         print('Score:', t.score(d_test_attribute, d_test_var))
         self.assertLessEqual(result[0], 1)
+        
+    def test_03_murnialestari_1184006(self):
+        from Chapter02.murnialestari1184006 import preparation, training, testing
+
+        datasetpath = 'Chapter01/dataset/bill_authentication.txt'
+        # testing function preparation
+        df_train_att, df_train_label, df_test_att, df_test_label, df_att, df_label = preparation(datasetpath)
+        # testing function training
+        clf = training(df_train_att, df_train_label)
+        # testing function testing
+        hasiltesting = testing(clf, df_test_att.head())
+        # hasil
+        print('\nhasil testing murnia : ')
+        print(hasiltesting)
+        ambilsatuhasiltesting = hasiltesting[0]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)                                    
+        print('Score:', clf.score(df_test_att, df_test_label))
+        
