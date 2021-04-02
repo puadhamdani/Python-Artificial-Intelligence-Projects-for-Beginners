@@ -418,6 +418,28 @@ class TestApp(unittest.TestCase):
         print(result)
         print("Hasilnya Adalah : "+ str(t.score(testAttr, testLabel)))
 
+    def test_03_SitiNPujaKesuma_1184004(self):
+        from Chapter02.SitiNPujaKesuma1184004 import preparation, training, testing
+        info = preparation()
+
+        train = info.pop(0)
+        test = info.pop(0)
+
+        trainAttr = train.pop(0)
+        trainVar = train.pop(0)
+
+        testAttr = test.pop(0)
+        testVar = test.pop(0)
+
+        t = training(trainAttr, trainVar)
+
+        result = testing(t, testAttr)
+        print('result : ')
+        print(result)
+        print("score : ",t.score(testAttr, testVar))
+        self.assertLessEqual(result[0],1)
+
+
     def test_03_Jefrinanda_1184052(self):
         from Chapter02.jefri1184052 import preparation, training, testing
         data = preparation()
@@ -437,4 +459,4 @@ class TestApp(unittest.TestCase):
         print('score : ')
         print(scoretest)
         print("score : ", t.score(test_Attribut, test_Varr))
-        self.assertLessEqual(scoretest[0], 1)
+        self.assertLessEqual(scoretest[0], 1)       
