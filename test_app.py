@@ -14,7 +14,7 @@ class TestApp(unittest.TestCase):
         dataset='Chapter01/dataset/student-por.csv'
         d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
         t = training(d_train_att,d_train_pass)
-        hasiltestingsemua = 	testing(t,d_test_att)
+        hasiltestingsemua =     testing(t,d_test_att)
         print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[0]
@@ -78,7 +78,7 @@ class TestApp(unittest.TestCase):
         dataset='Chapter01/dataset/Pokedex_Condensed_Numeric_Dataset.csv'
         anak_train_att,anak_train_pass,anak_test_att,anak_test_pass,anak_att,anak_pass= prepoc(dataset)
         it = training(anak_train_att,anak_train_pass)
-        hasiltestingsemua = 	testing(it,anak_test_att)
+        hasiltestingsemua =     testing(it,anak_test_att)
         print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[1]
@@ -150,7 +150,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         print('Score:', apel.score(nanas_test_att, nanas_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
-        self.assertLessEqual(ambilsatuhasiltesting, 2)
+        self.assertLessEqual(ambilsatuhasiltesting, 3)
         
     def test_03_kevin_1184049(self):
         from Chapter02.kevin1184049 import preparation, training, testing
@@ -379,4 +379,187 @@ class TestApp(unittest.TestCase):
         ambilsatuhasiltesting = hasiltesting[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
         print('Hasil ', clf.score(f_test_att, f_test_label))
-    
+        
+        
+    def test_04_aditya_1184090(self):
+        from Chapter03.Aditya1184090 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_win = train.pop(0)
+        #test data
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_win = test.pop(0)
+        #training
+        t = training(dfs_train_att, dfs_train_win)
+        #predict
+        result = testing(t,dfs_test_att)
+        print("result : ")
+        print(result)
+        print('Score:', t.score(dfs_test_att, dfs_test_win))
+        self.assertLessEqual(result[0], 1)
+        
+    def test_04_yusuf_1184026(self):
+        from Chapter03.Yusuf1184026 import preparation, training, testing
+        data = preparation()
+
+        train = data.pop(0)
+        test = data.pop(0)
+
+        trainAttr = train.pop(0)
+        trainVar = train.pop(0)
+
+        testAttr = test.pop(0)
+        testVar = test.pop(0)
+
+        t = training(trainAttr, trainVar)
+
+        result = testing(t, testAttr)
+        print('result : ')
+        print(result)
+        print("score : ",t.score(testAttr, testVar))
+        self.assertLessEqual(result[0], 1)
+
+    def test_04_alvian_1184077(self):
+        from Chapter03.alvian1184077 import preparation, training, testing
+        data = preparation()
+
+        train = data.pop(0)
+        test = data.pop(0)
+
+        trainAttr = train.pop(0)
+        trainVar = train.pop(0)
+
+        testAttr = test.pop(0)
+        testVar = test.pop(0)
+
+        t = training(trainAttr, trainVar)
+
+        result = testing(t, testAttr)
+        print('result : ')
+        print(result)
+        print("score : ", t.score(testAttr, testVar))
+        self.assertLessEqual(result[0], 1)
+
+    def test_04_mauliddhia_1184101(self):
+        from Chapter03.Mauliddhia1184101 import preparation, training, testing
+        data = preparation()
+
+        train = data.pop(0)
+        test = data.pop(0)
+
+        trainAttr = train.pop(0)
+        trainVar = train.pop(0)
+
+        testAttr = test.pop(0)
+        testVar = test.pop(0)
+
+        t = training(trainAttr, trainVar)
+
+        result = testing(t, testAttr)
+        print('result : ')
+        print(result)
+        print("score : ", t.score(testAttr, testVar))
+        self.assertLessEqual(result[0], 1)
+        
+    def test_04_nurul_1184038(self):
+        from Chapter03.nurul1184038 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_win = train.pop(0)
+        #test data
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_win = test.pop(0)
+        #training
+        t = training(dfs_train_att, dfs_train_win)
+        #predict
+        result = testing(t,dfs_test_att)
+        print("result : ")
+        print(result)
+        print('Score:', t.score(dfs_test_att, dfs_test_win))
+        self.assertLessEqual(result[0], 1)
+        
+    def test_04_kevin_1184049(self):
+        from Chapter03.kevin1184049 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/spam_ham_dataset.csv'
+        d_train_att, d_train_pass, d_test_att, d_test_pass= prepoc(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', t.score(d_test_att, d_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
+        
+    def test_04_helmiazhar_1184013(self):
+        from Chapter03.helmiazhar1184013 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_win = train.pop(0)
+        #test data
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_win = test.pop(0)
+        #training
+        t = training(dfs_train_att, dfs_train_win)
+        #predict
+        result = testing(t,dfs_test_att)
+        print("result : ")
+        print(result)
+        print('Score:', t.score(dfs_test_att, dfs_test_win))
+        self.assertLessEqual(result[1], 5)
+
+    def test_04_rizalramadhan_1184033(self):
+        from Chapter03.rizalramadhan1184033 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/emailspam.csv'
+        nanas_train_att, nanas_train_pass, nanas_test_att, nanas_test_pass= prepoc(datapath)
+        apel = training(nanas_train_att, nanas_train_pass)
+        hasiltestingsemua = testing(apel, nanas_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', apel.score(nanas_test_att, nanas_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
+        
+    def test_04_murnia_1184006(self):
+        from Chapter03.murnialestari1184006 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/Costumes_Amazon.csv'
+        d_train_att, d_train_pass, d_test_att, d_test_pass= prepoc(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', t.score(d_test_att, d_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 5)
+        
+    def test_04_yukiardiansyah_1184053(self):
+        from Chapter03.YukiArdiansyah1184053 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_win = train.pop(0)
+        #test data
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_win = test.pop(0)
+        #training
+        t = training(dfs_train_att, dfs_train_win)
+        #predict
+        result = testing(t,dfs_test_att)
+        print("result : ")
+        print(result)
+        print('Score:', t.score(dfs_test_att, dfs_test_win))
+        self.assertLessEqual(result[1], 5)
