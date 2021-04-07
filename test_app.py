@@ -497,3 +497,24 @@ class TestApp(unittest.TestCase):
         print('Score:', t.score(d_test_att, d_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
+        
+    def test_04_helmiazhar_1184013(self):
+        from Chapter03.helmiazhar1184013 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_win = train.pop(0)
+        #test data
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_win = test.pop(0)
+        #training
+        t = training(dfs_train_att, dfs_train_win)
+        #predict
+        result = testing(t,dfs_test_att)
+        print("result : ")
+        print(result)
+        print('Score:', t.score(dfs_test_att, dfs_test_win))
+        self.assertLessEqual(result[1], 5)
