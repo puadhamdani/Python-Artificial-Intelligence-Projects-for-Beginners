@@ -150,7 +150,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         print('Score:', apel.score(nanas_test_att, nanas_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
-        self.assertLessEqual(ambilsatuhasiltesting, 2)
+        self.assertLessEqual(ambilsatuhasiltesting, 3)
         
     def test_03_kevin_1184049(self):
         from Chapter02.kevin1184049 import preparation, training, testing
@@ -443,3 +443,15 @@ class TestApp(unittest.TestCase):
         print(result)
         print("score : ", t.score(testAttr, testVar))
         self.assertLessEqual(result[0], 1)
+
+    def test_04_rizalramadhan_1184033(self):
+        from Chapter03.rizalramadhan1184033 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/emailspam.csv'
+        nanas_train_att, nanas_train_pass, nanas_test_att, nanas_test_pass= prepoc(datapath)
+        apel = training(nanas_train_att, nanas_train_pass)
+        hasiltestingsemua = testing(apel, nanas_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', apel.score(nanas_test_att, nanas_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
