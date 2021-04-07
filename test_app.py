@@ -14,7 +14,7 @@ class TestApp(unittest.TestCase):
         dataset='Chapter01/dataset/student-por.csv'
         d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
         t = training(d_train_att,d_train_pass)
-        hasiltestingsemua = 	testing(t,d_test_att)
+        hasiltestingsemua =     testing(t,d_test_att)
         print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[0]
@@ -78,7 +78,7 @@ class TestApp(unittest.TestCase):
         dataset='Chapter01/dataset/Pokedex_Condensed_Numeric_Dataset.csv'
         anak_train_att,anak_train_pass,anak_test_att,anak_test_pass,anak_att,anak_pass= prepoc(dataset)
         it = training(anak_train_att,anak_train_pass)
-        hasiltestingsemua = 	testing(it,anak_test_att)
+        hasiltestingsemua =     testing(it,anak_test_att)
         print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[1]
@@ -150,7 +150,7 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         print('Score:', apel.score(nanas_test_att, nanas_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
-        self.assertLessEqual(ambilsatuhasiltesting, 2)
+        self.assertLessEqual(ambilsatuhasiltesting, 3)
         
     def test_03_kevin_1184049(self):
         from Chapter02.kevin1184049 import preparation, training, testing
@@ -518,3 +518,15 @@ class TestApp(unittest.TestCase):
         print(result)
         print('Score:', t.score(dfs_test_att, dfs_test_win))
         self.assertLessEqual(result[1], 5)
+
+    def test_04_rizalramadhan_1184033(self):
+        from Chapter03.rizalramadhan1184033 import prepoc, training, testing
+        datapath = 'Chapter01/dataset/emailspam.csv'
+        nanas_train_att, nanas_train_pass, nanas_test_att, nanas_test_pass= prepoc(datapath)
+        apel = training(nanas_train_att, nanas_train_pass)
+        hasiltestingsemua = testing(apel, nanas_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        print('Score:', apel.score(nanas_test_att, nanas_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
