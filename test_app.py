@@ -699,3 +699,23 @@ class TestApp(unittest.TestCase):
         print('Score:', t.score(dfs_test_att, dfs_test_win))
         self.assertLessEqual(result[1], 5)
 
+    def test_04_muhamri_1184100(self):
+        from Chapter03.MuhAmri_1184100 import preparation,training,testing
+        data = preparation()
+        
+        train = data.pop(0)
+        buy_train_attribute = train.pop(0)
+        buy_train_win = train.pop(0)
+        
+        test = data.pop(0)
+        buy_test_attribute = test.pop(0)
+        buy_test_win = test.pop(0)
+        
+        w = training(buy_train_attribute,buy_train_win)
+        
+        result = testing(w,buy_test_attribute)
+        print('result : ')
+        print(result)
+        print("score : ", w.score(buy_test_attribute,buy_test_win))
+        self.assertLessEqual(result[0], 1)
+        
