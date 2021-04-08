@@ -665,8 +665,4 @@ class TestApp(unittest.TestCase):
         print('Score:', t.score(d_test_att, d_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
-        
-        
-a= TestApp()
-a.test_04_gany_1184008()
 
