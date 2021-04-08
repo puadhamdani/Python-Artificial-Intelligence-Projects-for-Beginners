@@ -653,4 +653,20 @@ class TestApp(unittest.TestCase):
         print('Score:', t.score(d_test_att, d_test_pass))
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 5)
+        
+    def test_04_gany_1184008(self):
+        from Chapter03.gany1184008 import preparation, training, testing
+        datasetpath = 'Chapter01/dataset/Indonesian Sentiment Twitter Dataset Labeled.csv'
+        d_train_att, d_train_pass, d_test_att, d_test_pass= preparation(datasetpath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing gany : ')
+        print(hasiltestingsemua)
+        print('Score:', t.score(d_test_att, d_test_pass))
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
+        
+        
+a= TestApp()
+a.test_04_gany_1184008()
 
