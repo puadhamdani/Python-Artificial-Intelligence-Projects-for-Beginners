@@ -696,6 +696,18 @@ class TestApp(unittest.TestCase):
         print("Hasilnya : ", t.score(testAttr, testVar))
         self.assertLessEqual(result[0], 1)
 
+    def test_04_AlifiaZahra_1184051(self):
+        from Chapter03.AlifiaZahra1184051 import preparation, training, testing
+        datasetpath = 'Chapter01/dataset/DisneylandReviews.csv'
+        d_train_att, d_train_label, d_test_att, d_test_label = preparation(
+            datasetpath)
+        clf = training(d_train_att, d_train_label)
+        allresult = testing(clf, d_test_att)
+        print('0: Not Satisfied, 1: Satisfied')
+        print('\n hasil testing : ', allresult)
+        print('Score:', clf.score(d_test_att, d_test_label))
+        self.assertLessEqual(allresult[0], 1)
+
     def test_04_cecep_1184092(self):
         from Chapter03.cecep_1184092 import preparation, training, testing
         data = preparation()
@@ -709,4 +721,4 @@ class TestApp(unittest.TestCase):
         result = testing(t, testAttr)
         print('Data testingnya : ')
         print(result)
-        self.assertLessEqual(result[0], 1)
+        self.assertLessEqual(allresult[0], 1)
