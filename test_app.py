@@ -721,4 +721,4 @@ class TestApp(unittest.TestCase):
         result = testing(t, testAttr)
         print('Data testingnya : ')
         print(result)
-        self.assertLessEqual(allresult[0], 1)
+        self.assertLessEqual(result[0], 1)
