@@ -660,6 +660,42 @@ class TestApp(unittest.TestCase):
         print("Hasilnya : ", t.score(testAttr, testVar))
         self.assertLessEqual(result[0], 1)
 
+    def test_04_TriAnggaDioSimamora_1184047(self):
+        from Chapter03.TriAnggaDio_1184047 import running_chapter_3
+        result = running_chapter_3()
+        self.assertLessEqual(result, 1)
+
+    def test_04_SyabrienaPutriVeriane_1184094(self):
+        from Chapter03.SyabrienaPutriVeriane1184094 import preparation, training, testing
+        datasetpath = 'Chapter01/dataset/SnapchatReview.csv'
+        # testing function preparation
+        df_train_att, df_train_label, df_test_att, df_test_label = preparation(
+            datasetpath)
+        # testing function training
+        clf = training(df_train_att, df_train_label)
+        # testing function testing
+        hasil = testing(clf, df_test_att)
+        # hasil testing
+        print('\nhasil testing Syabriena :', hasil)
+        print('Score:', clf.score(df_test_att, df_test_label))
+        self.assertLessEqual(hasil[1], 1)
+
+    def test_04_sharif_1184044(self):
+        from Chapter03.sharif_1184044 import preparation, training, testing
+        data = preparation()
+        train = data.pop(0)
+        test = data.pop(0)
+        trainAttr = train.pop(0)
+        trainVar = train.pop(0)
+        testAttr = test.pop(0)
+        testVar = test.pop(0)
+        t = training(trainAttr, trainVar)
+        result = testing(t, testAttr)
+        print('Data testingnya : ')
+        print(result)
+        print("Hasilnya : ", t.score(testAttr, testVar))
+        self.assertLessEqual(result[0], 1)
+
     def test_04_cecep_1184092(self):
         from Chapter03.cecep_1184092 import preparation, training, testing
         data = preparation()
@@ -673,5 +709,4 @@ class TestApp(unittest.TestCase):
         result = testing(t, testAttr)
         print('Data testingnya : ')
         print(result)
-        print("Hasilnya : ", t.score(testAttr, testVar))
         self.assertLessEqual(result[0], 1)
