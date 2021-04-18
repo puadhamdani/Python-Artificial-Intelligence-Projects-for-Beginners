@@ -98,7 +98,7 @@ def d2v_training(review_data_list):
     from gensim.models import Doc2Vec
     dimension = 52
     model = Doc2Vec(review_data_list, size=dimension, workers=8)
-    model.save('model_w2v_1184047.model')
+    model.save('model_d2v_1184047.d2v')
     return model
 
 
@@ -113,8 +113,13 @@ def d2v_testing():
     from google_drive_downloader import GoogleDriveDownloader
 
     GoogleDriveDownloader.download_file_from_google_drive(
-        file_id='1-C8r45fI2lkUdSHhMkqPjXOCWp2qHe1h',
+        file_id='1-G8wlp0dXo6bsqQtqPjKczecyTFEImuN',
         dest_path='model/model_d2v_1184047.d2v'
+    )
+          
+    GoogleDriveDownloader.download_file_from_google_drive(
+        file_id='1-EzOli2FH4zBFwFVReX80fLZ2Ag9QLY7',
+        dest_path='model/model_d2v_1184047.d2v.dv.vectors.npy'
     )
 
     from gensim.models import Doc2Vec
