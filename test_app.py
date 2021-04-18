@@ -763,4 +763,4 @@ class TestApp(unittest.TestCase):
         from Chapter03.TriAnggaDioD2V1184047 import w2v_testing, d2v_testing
         w2v_testing()
         result = d2v_testing()
-        self.assertGreaterEqual(result, 0.50)
+        self.assertGreaterEqual(result, 0.40)
