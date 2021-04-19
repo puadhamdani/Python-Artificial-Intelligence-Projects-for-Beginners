@@ -45,9 +45,7 @@ def training(data_list, unsup_sentences):
     # buat model doc2vec
     model = Doc2Vec(unsup_sentences,dm=0,hs=1,vector_size=20)
     model.build_vocab(unsup_sentences)
-    vector = model.infer_vector(word_tokenize("it is very good"))
-    model.dv.most_similar([vector])
-    model.save('foodrev_model.d2v')
+    model.save('d2v_model_1184030_review_food.d2v')
     return model, w2vmodel
     
 def testing():
