@@ -4,3 +4,4 @@ sklearn
 gensim
 googledrivedownloader
 requests
+nltk
