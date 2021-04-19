@@ -56,8 +56,8 @@ def testing():
     #from sklearn.model_selection import train_test_split
     # download and load model
     gd.download_file_from_google_drive(file_id='1TG-z9iqgaj0QKnfMsXmITv1sB7U4V_Iv',
-                                    dest_path='model/foodrev_model.d2v')
-    w2vecmodel = gensim.models.KeyedVectors.load_word2vec_format('w2v_model_1184030_review_amazon_food.bin', binary=True)
+                                    dest_path='model/w2v_model_1184030_review_amazon_food.bin')
+    w2vecmodel = gensim.models.KeyedVectors.load_word2vec_format('model/w2v_model_1184030_review_amazon_food.bin', binary=True)
     word = ['awesome','bad','good']
     for i in word:
         w2vecmodel[i]
