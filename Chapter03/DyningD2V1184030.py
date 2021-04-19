@@ -65,7 +65,7 @@ def testing():
     # mengecek similaritas
     pembanding = ['bad','good']
     for i in pembanding:
-        w2vec_test = print('similaritas awesome-',i,w2vecmodel.similarity('awesome',i))
+        print('similaritas awesome-',i,w2vecmodel.similarity('awesome',i))
     
     # download dan load doc2vec model
     gd.download_file_from_google_drive(file_id='1Jku7eBsA1zysfIrYGhWyKIiK3xckiJ1V',
