@@ -758,3 +758,9 @@ class TestApp(unittest.TestCase):
         print(result)
         print("score : ",t.score(testAttr, testVar))
         self.assertLessEqual(result[0], 1)
+
+    def test_05_angga_1184047(self):
+        from Chapter03.TriAnggaDioD2V1184047 import w2v_testing, d2v_testing
+        w2v_testing()
+        result = d2v_testing()
+        self.assertGreaterEqual(result, 0.40)
