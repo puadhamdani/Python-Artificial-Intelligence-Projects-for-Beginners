@@ -37,7 +37,6 @@ def preparation():
     return unsup_sentences, data_list
 
 def training(data_list, unsup_sentences):
-    from nltk.tokenize import word_tokenize
     from gensim.models import Word2Vec
     # buat model word2vec
     w2vmodel = Word2Vec(sentences=data_list, vector_size=52, workers=8)
@@ -53,7 +52,9 @@ def testing():
     import gensim, random
     from nltk.tokenize import word_tokenize
     from sklearn.ensemble import RandomForestClassifier
-    #from sklearn.model_selection import train_test_split
+    # download punkt nltk
+    import nltk
+    nltk.download('punkt')
     # download and load model
     gd.download_file_from_google_drive(file_id='1TG-z9iqgaj0QKnfMsXmITv1sB7U4V_Iv',
                                     dest_path='model/w2v_model_1184030_review_amazon_food.bin')
