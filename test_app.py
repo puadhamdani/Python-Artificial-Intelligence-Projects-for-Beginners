@@ -765,7 +765,7 @@ class TestApp(unittest.TestCase):
         result = d2v_testing()
         self.assertGreaterEqual(result, 0.40)
 
-    def test_05_Dyning_1184030:
+    def test_05_Dyning_1184030(self):
     	from Chapter03.DyningD2V1184030 import testing
         # testing function testing
         hasil = testing()
